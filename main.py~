@@ -1,0 +1,27 @@
+#!/usr/bin/env python
+
+# author: Sungkweon Hong
+# email: sk5050@mit.edu
+
+import sys
+from utils import import_models
+import_models()
+from MIG_model import MIG_Model
+import copy
+import numpy as np
+
+# Now you can give command line cc argument after filename
+if __name__ == '__main__':
+    Model = MIG_Model()
+
+    print(Model.state_list)
+    print(Model.obs_list)
+    print(Model.action_list)
+    
+    S0 = Model.state_list[0]
+
+    print("------------------------------")
+    print(Model.state_transitions(S0, Model.actions[S0][0]))
+    print("------------------------------")
+    print(Model.observations(S0))
+    

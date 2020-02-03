@@ -1,0 +1,42 @@
+#!/usr/bin/env python
+
+# author: Sungkweon Hong
+# email: sk5050@mit.edu
+
+import math
+
+
+class Multi_Agents(object):
+
+    def __init__(self, model, agents_list):
+
+        self.model = model
+        self.agents_list = agents_list
+
+        self.macro_history = []
+        for i in range(len(self.agents_list)):
+            self.macro_history.append([])
+
+
+
+
+        
+
+class Agent(object):
+
+    def __init__(self, agent_name, init_state):
+
+        self.agent_name = agent_name
+        self.current_state = init_state
+
+
+
+    def execute_action(self, state, obs, option):
+        action = option.option_policy[obs]
+
+        new_state = model.state_transition(state, action)  ## need to sample from distribution
+        new_obs = model.observations(state)  ## need to sample from distribution
+
+        is_terminated = option.termination_cond[obs]  ## need to sample from distribution
+
+        return b
